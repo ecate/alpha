@@ -1,0 +1,29 @@
+<h1>Listing rosters</h1>
+
+<table>
+  <tr>
+    <th>Codeactivite</th>
+    <th>User</th>
+    <th>Datedebut</th>
+    <th>Datefin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rosters.each do |roster| %>
+  <tr>
+    <td><%= roster.codeactivite %></td>
+    <td><%= roster.user_id %></td>
+    <td><%= roster.datedebut %></td>
+    <td><%= roster.datefin %></td>
+    <td><%= link_to 'Details', roster %></td>
+    <td><%= link_to 'Modifier', edit_roster_path(roster) %></td>
+    <td><%= link_to 'Supprimer', roster, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Roster', new_roster_path %>

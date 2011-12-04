@@ -1,0 +1,13 @@
+<h1>Editing roster for <%= User.find_by_id(@roster.user_id).email %>
+<br><br>
+  current_user <%= current_user.id %>
+  <br><br>
+  Roster du current_user <%= current_user.roster.id %>
+  <br><br>
+  Roster vu <%= @roster.id %>
+</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @roster %> |
+<%= link_to 'Back', rosters_path %>

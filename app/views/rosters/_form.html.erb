@@ -1,0 +1,23 @@
+<%= form_for(@roster) do |f| %>
+  <% if @roster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@roster.errors.count, "error") %> prohibited this roster from being saved:</h2>
+
+      <ul>
+      <% @roster.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <div class="field">
+    <%= f.label :harrivee %><br />
+    <%= f.time_select :harrivee, :prompt => {:hour => '22', :minute => '40'} %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
