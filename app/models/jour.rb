@@ -1,6 +1,3 @@
-class Jour < ActiveRecord::Base
-  belongs_to :roster
-end
 # == Schema Information
 #
 # Table name: jours
@@ -11,4 +8,10 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #
+
+class Jour < ActiveRecord::Base
+  belongs_to :roster
+  validates :jourpresent, :uniqueness => {:message => "Jour de presence deja pris en compte" }
+end
+
 

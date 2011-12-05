@@ -1,11 +1,16 @@
-<h1>Listing rosters</h1>
+<h1>Présence prévisionelle</h1>
 
 <table>
   <tr>
     <th>Codeactivite</th>
-    <th>User</th>
-    <th>Datedebut</th>
-    <th>Datefin</th>
+    <th>Personnel</th>
+    <th>Nb jours présents</th>
+    <th>Convocation ? </th>
+    <th>BUT ?</th>
+    <th>Ville domicile</th>
+    <th>Heure arrivee</th>
+    <th>Heure Depart</th>
+    <th>Commentaire</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,8 +20,14 @@
   <tr>
     <td><%= roster.codeactivite %></td>
     <td><%= roster.user_id %></td>
-    <td><%= roster.datedebut %></td>
-    <td><%= roster.datefin %></td>
+    <td><%= roster.jours.count %></td>
+    <td><%= roster.convoc %></td>
+    <td><%= roster.but %></td>
+    <td><%= roster.butvilledepart %></td>
+    <td><%= roster.harrivee %></td>
+    <td><%= roster.hdepart %></td>
+    <td><%= roster.comment %></td>
+
     <td><%= link_to 'Details', roster %></td>
     <td><%= link_to 'Modifier', edit_roster_path(roster) %></td>
     <td><%= link_to 'Supprimer', roster, confirm: 'Are you sure?', method: :delete %></td>

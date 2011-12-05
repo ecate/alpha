@@ -6,11 +6,23 @@
         - email
         - role
 
+
   Roster:
     :options:
       :fields:
         - id
         - codeactivite
         - user_id
-        - datedebut
-        - datefin
+        - convoc
+        - but
+        - butvilledepart
+        - comment
+        - harrivee
+        - hdepart
+
+  Jour:
+      :options:
+        :fields:
+          - id
+          - roster_id
+          - jourpresent

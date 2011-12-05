@@ -45,7 +45,7 @@ class RostersController < ApplicationController
     # GET /rosters/new
     # GET /rosters/new.json
     def new
-      if Roster.find_all_by_user_id(current_user.id).nil?
+      if Roster.find_all_by_user_id(current_user.id).empty?
         @roster = Roster.new
           respond_to do |format|
             format.html # new.html.erb
@@ -56,20 +56,15 @@ class RostersController < ApplicationController
       end
     end
 
-    # GET /rosters/1/edit
     def edit
       @roster = Roster.find(params[:id])
-      #redirect_to root_path if @roster.id != current_user.roster.id
+
     end
 
-    # POST /rosters
-    # POST /rosters.json
     def create
       @roster = Roster.new(params[:roster])
-      @roster.user_id = current_user.id
-      @roster.codeactivite = @@activite
-
-
+      #@roster.user_id = current_user.id
+      #@roster.codeactivite = @@activite
       respond_to do |format|
         if @roster.save
           format.html { redirect_to @roster, notice: 'Roster was successfully created.' }

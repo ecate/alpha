@@ -6,18 +6,41 @@
 </p>
 
 <p>
-  <b>User:</b>
+  <b>Personnel:</b>
   <%= @roster.user_id %>
 </p>
 
 <p>
-  <b>Datedebut:</b>
-  <%= @roster.datedebut %>
+  <b>Nb jours présents:</b>
+  <%= @roster.jours.count %>
 </p>
 
 <p>
-  <b>Datefin:</b>
-  <%= @roster.datefin %>
+  <b>Convocation ?</b>
+  <%= @roster.convoc %>
+</p>
+<p>
+   <b> BUT ?</b>
+   <%= @roster.but %>
+</p>
+<p>
+   <b>Ville domicile </b>
+   <%= @roster.butvilledepart %>
+</p>
+
+<p>
+   <b>Heure arrivee </b>
+   <%= @roster.harrivee %>
+</p>
+
+<p>
+   <b>Heure Depart </b>
+   <%= @roster.hdepart %>
+</p>
+
+<p>
+   <b>Commentaire </b>
+   <%= @roster.comment %>
 </p>
 
 

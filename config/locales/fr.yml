@@ -180,10 +180,16 @@ fr:
       submit: "Enregistrer ce(tte) %{model}"
     label:
       roster:
-        codeactivite: 'Code Activité'
-        user_id: 'Personnel'
-        datedebut: 'Date début'
-        datefin: 'Date fin'
+        codeactivite: "Code Activité"
+        user_id: "Personnel"
+        convoc: "Besoin convocation"
+        but: "Besoin BUT ?"
+        butvilledepart: "BUT - Ville de residence"
+        harrivee: "Heure d'arrivee"
+        hdepart: "Heure de départ"
+        comment: "Commentaire"
+
+
 
 
   attributes:
