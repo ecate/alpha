@@ -1,4 +1,5 @@
-<%= form_for @roster.in_mission_range do |f| %>
+<%= form_for @roster do |f| %>
+
   <% if @roster.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@roster.errors.count, "error") %> prohibited this roster from being saved:</h2>
@@ -11,43 +12,46 @@
     </div>
   <% end %>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :convoc %><br />
     <%= f.check_box :convoc %>
-
-    <div class="field">
+  </div>
+  <div class="field">
     <%= f.label :but %><br />
     <%= f.check_box :but %>
-
-     <div class="field">
+  </div>
+  <div class="field">
     <%= f.label :butvilledepart %><br />
     <%= f.text_field :butvilledepart %>
+  </div>
+  <div class="field">
+    <%= f.label :harrivee %><br />
+    <%= f.time_select :harrivee, :prompt => {:hour => '22', :minute => '40'} %>
+  </div>
+  <div class="field">
+    <%= f.label :hdepart %><br />
+    <%= f.time_select :hdepart, :prompt => {:hour => '17', :minute => '00'} %>
+  </div>
+  <div class="field">
+     <%= f.label :comment %><br />
+     <%= f.text_area :comment %>
+  </div>
 
-      <h2>Jours de présence</h2>
-      <p>
-        <%= f.fields_for(:jours) do |jours_form| %>
-        <%= jours_form.date_select :jourpresent %>
-        <%= unless jours_form.object.new_record?
-                  jours_form.check_box('_destroy') + jours_form.label('_destroy', 'Retirer')
-            end %>
-        <br>
-      <% end %>
-      </p>
+   <div class="field">
+   <!--On affiche ici tous les jours de convocation de la mission-->
+   <!--Selon le jour, on vérifie si le personnel avait déjà dit ok pour ce jour, la checkbox sera alors cochée par défaut-->
+   <!--On ajoute dans paramas un tableau appelé "present" pour lister les jours cochés à traiter par l'action update du controller-->
+   <% Convocationjours.where(:mission_id => @roster.mission_id).each do |dconvoc|  %>
 
-     <div class="field">
-           <%= f.label :harrivee %><br />
-           <%= f.time_select :harrivee, :prompt => {:hour => '22', :minute => '40'} %>
-      </div>
-      <div class="field">
-           <%= f.label :hdepart %><br />
-           <%= f.time_select :hdepart, :prompt => {:hour => '17', :minute => '00'} %>
-      </div>
-       <div class="field">
-           <%= f.label :comment %><br />
-           <%= f.text_area :comment %>
-      </div>
+   <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjours_id(@roster.id,dconvoc.id).nil?) %>
+   <%= label_tag "roster[present][]", dconvoc.jourconvoc %>
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+
 <% end %>

@@ -1,26 +1,9 @@
 class RostersController < ApplicationController
   before_filter :authenticate_user!
-  #before_filter :check_ownership
   load_and_authorize_resource
 
-
-    ## variables en dur pour tests
-  @@activite = 5225
-  @@missiondebut = Date.today
-  @@missionfin = Date.today + 10.days
-
-  def check_ownership
-    unless params[:id].nil?
-      @roster = Roster.find(params[:id])
-      redirect_to root_path if @roster.id != current_user.roster.id
-    end
-  end
-
-    # GET /rosters
-    # GET /rosters.json
-    def index
+  def index
       @roster = Roster.all
-      #@rosters = Roster.find_all_by_user_id(current_user.id)
 
       respond_to do |format|
         format.html # index.html.erb
@@ -28,25 +11,19 @@ class RostersController < ApplicationController
       end
     end
 
-    # GET /rosters/1
-    # GET /rosters/1.json
     def show
       @roster = Roster.find(params[:id])
-      #if @roster.id != current_user.roster.id
-      #  redirect_to roster_path(current_user.roster.id)
-      #else
         respond_to do |format|
           format.html # show.html.erb
           format.json { render json: @roster }
         end
-      #end
     end
 
-    # GET /rosters/new
-    # GET /rosters/new.json
     def new
       if Roster.find_all_by_user_id(current_user.id).empty?
         @roster = Roster.new
+        @roster.user_id = current_user.id
+        @roster.mission_id= '1'
           respond_to do |format|
             format.html # new.html.erb
             format.json { render json: @roster }
@@ -63,8 +40,8 @@ class RostersController < ApplicationController
 
     def create
       @roster = Roster.new(params[:roster])
-      #@roster.user_id = current_user.id
-      #@roster.codeactivite = @@activite
+      @roster.user_id = current_user.id
+      @roster.mission_id= '1'
       respond_to do |format|
         if @roster.save
           format.html { redirect_to @roster, notice: 'Roster was successfully created.' }
@@ -76,24 +53,49 @@ class RostersController < ApplicationController
       end
     end
 
-    # PUT /rosters/1
-    # PUT /rosters/1.json
-    def update
+
+  def update
+
       @roster = Roster.find(params[:id])
 
+      # On récupère ce tableau du formulaire Edit. Il contient les jours cochés
+      presents = params[:roster]["present"]
+
+      # Le personnel ne vient pas à la séance
+      if presents.nil?
+        Jour.destroy_all(:roster_id => @roster.id)
+      else
+        #Etape 1 : On supprime les jours qui ont été décochés par rapport à la fois précédente
+        Jour.find_all_by_roster_id(@roster.id).each do |jid|
+          jourid = jid.convocationjours_id
+
+          if presents.include?(jourid.to_s)
+            presents.delete(jourid.to_s)
+          else
+            Jour.find_by_convocationjours_id(jourid).destroy
+          end
+        end
+        #Etape 2 : On ajoute les jours nouvellement cochés
+        unless presents.empty?
+          presents.each do |njour|
+            Jour.create(roster_id: @roster.id, convocationjours_id: njour.to_i)
+          end
+        end
+      end
+
+
+      #Etape 3 : on update le reste de l'objet Roster
       respond_to do |format|
         if @roster.update_attributes(params[:roster])
-          format.html { redirect_to @roster, notice: 'Roster was successfully updated.' }
+          format.html { redirect_to @roster, notice: 'Votre compte-rendu de presence est enregistre.'}
           format.json { head :ok }
         else
           format.html { render action: "edit" }
           format.json { render json: @roster.errors, status: :unprocessable_entity }
         end
       end
-    end
+  end
 
-    # DELETE /rosters/1
-    # DELETE /rosters/1.json
     def destroy
       @roster = Roster.find(params[:id])
       @roster.destroy

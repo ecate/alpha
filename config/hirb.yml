@@ -11,7 +11,7 @@
     :options:
       :fields:
         - id
-        - codeactivite
+        - mission_id
         - user_id
         - convoc
         - but
@@ -25,4 +25,17 @@
         :fields:
           - id
           - roster_id
-          - jourpresent
+          - convocationjours_id
+
+  Mission:
+      :options:
+        :fields:
+          - id
+          - name
+
+  Convocationjour:
+      :options:
+        :fields:
+          - id
+          - mission_id
+          - jourconvoc

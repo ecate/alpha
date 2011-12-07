@@ -3,32 +3,28 @@
 # Table name: rosters
 #
 #  id             :integer(4)      not null, primary key
-#  codeactivite   :integer(4)
 #  user_id        :integer(4)
+#  created_at     :datetime
+#  updated_at     :datetime
 #  convoc         :boolean(1)
 #  but            :boolean(1)
 #  butvilledepart :string(255)
 #  comment        :text
 #  harrivee       :datetime
 #  hdepart        :datetime
-#  created_at     :datetime
-#  updated_at     :datetime
+#  mission_id     :integer(4)
 #
 
 class Roster < ActiveRecord::Base
   belongs_to :user
+  has_one :mission
   has_many :jours, :dependent => :destroy
-  accepts_nested_attributes_for :jours, :reject_if => lambda { |attrs| attrs.all?{|key,value| value.blank?}} ,:allow_destroy => true
+  has_many :convocationjourses, :through => :jours
 
-  attr_accessible :user_id, :codeactivite, :jours_attributes
+
+  attr_accessible :user_id, :mission_id, :convoc, :but, :butvilledepart, :comment, :harrivee, :hdepart
   validates :user_id, :uniqueness => {:message => "Une seule declaration de presence" }
 
-  def in_mission_range(n=1)
 
-      n.times do
-         jours.build
-      end
-      self
 
-  end
 end

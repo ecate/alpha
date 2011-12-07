@@ -11,17 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111204175945) do
+ActiveRecord::Schema.define(:version => 20111207085244) do
+
+  create_table "convocationjours", :force => true do |t|
+    t.integer  "mission_id"
+    t.date     "jourconvoc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "jours", :force => true do |t|
     t.integer  "roster_id"
-    t.date     "jourpresent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "convocationjours_id"
+  end
+
+  create_table "missions", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "rosters", :force => true do |t|
-    t.integer  "codeactivite"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20111204175945) do
     t.text     "comment"
     t.datetime "harrivee"
     t.datetime "hdepart"
+    t.integer  "mission_id"
   end
 
   create_table "users", :force => true do |t|

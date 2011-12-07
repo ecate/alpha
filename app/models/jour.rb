@@ -2,16 +2,18 @@
 #
 # Table name: jours
 #
-#  id          :integer(4)      not null, primary key
-#  roster_id   :integer(4)
-#  jourpresent :date
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id                  :integer(4)      not null, primary key
+#  roster_id           :integer(4)
+#  created_at          :datetime
+#  updated_at          :datetime
+#  convocationjours_id :integer(4)
 #
 
 class Jour < ActiveRecord::Base
   belongs_to :roster
-  validates :jourpresent, :uniqueness => {:message => "Jour de presence deja pris en compte" }
+  belongs_to :convocationjours
+
+  attr_accessible :roster_id, :convocationjours_id
 end
 
 
