@@ -1,13 +1,10 @@
-<h1>Editing roster for <%= User.find_by_id(@roster.user_id).email %>
-<br><br>
-  current_user <%= current_user.id %>
-  <br><br>
-  Roster du current_user <%= current_user.roster.id %>
-  <br><br>
-  Roster vu <%= @roster.id %>
-</h1>
+<h1> Présence prévisionnelle pour <%= User.find_by_id(@roster.user_id).email %> </h1>
 
-<%= render 'form' %>
+<% if Jour.find_by_roster_id(@roster.id).nil?%>
+    <h2>Aucune date sélectionnée pour la séance.</h2>
+<% end %>
+  <legend>Votre SPA : </legend>
+  <%= button_to "Cliquez ici si vous ne venez pas",roster_nevientpas_path(@roster),:method=>:put %>
 
-<%= link_to 'Show', @roster %> |
-<%= link_to 'Back', rosters_path %>
+  <%= render 'form' %>
+

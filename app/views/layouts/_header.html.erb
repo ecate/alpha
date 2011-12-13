@@ -1,0 +1,16 @@
+<%= csrf_meta_tag %>
+<header>
+
+  <nav class="round">
+    <ul>
+      <% if user_signed_in? %>
+            <!--<li><%= link_to "Profile", current_user %></li>-->
+            <li> Connecte en tant que <%= current_user.email %>. Ce n'est pas vous ? <%= link_to "Deconnexion", destroy_user_session_path, :method => :delete %> </li>
+       <% else %>
+            <li><%= link_to "Connexion", new_user_session_path %> </li>
+        <% end %>
+    </ul>
+  </nav>
+</header>
+
+

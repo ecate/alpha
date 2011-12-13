@@ -9,9 +9,9 @@ gem 'formtastic'
 gem 'execjs'
 gem 'therubyracer'
 gem 'jquery-rails'
+gem 'jquery_mobile_rails'
 # To format data in irb console
 gem 'hirb'
-gem "cancan"
 
 group :development do
     gem 'annotate', '2.4.1.beta1'

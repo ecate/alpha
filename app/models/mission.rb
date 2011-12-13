@@ -9,9 +9,40 @@
 #
 
 class Mission < ActiveRecord::Base
-  has_many :convocationjourses
+  has_many :convocationjours
   has_many :rosters
 
   has_many :jours, :through => :rosters
   has_many :users, :through => :rosters
+
+
+  def debutannee
+    self.convocationjours.sort_by(&:jourconvoc).first.jourconvoc.year
+
+  end
+
+  def finannee
+    self.convocationjours.sort_by(&:jourconvoc).last.jourconvoc.year
+
+  end
+
+  def debutmois
+    self.convocationjours.sort_by(&:jourconvoc).first.jourconvoc.strftime("%B")
+
+  end
+
+  def finmois
+    self.convocationjours.sort_by(&:jourconvoc).last.jourconvoc.strftime("%B")
+
+  end
+
+  def debutjour
+    self.convocationjours.sort_by(&:jourconvoc).first.jourconvoc.day
+
+  end
+
+  def finjour
+    self.convocationjours.sort_by(&:jourconvoc).last.jourconvoc.day
+
+  end
 end

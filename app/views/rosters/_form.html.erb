@@ -2,7 +2,7 @@
 
   <% if @roster.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@roster.errors.count, "error") %> prohibited this roster from being saved:</h2>
+      <h2><%= pluralize(@roster.errors.count, "erreur") %> a empeche l'enregistrement :</h2>
 
       <ul>
       <% @roster.errors.full_messages.each do |msg| %>
@@ -12,41 +12,46 @@
     </div>
   <% end %>
 
+   <% rmission = Mission.find_by_id(@roster.mission_id)  %>
   <div class="field">
-    <%= f.label :convoc %><br />
-    <%= f.check_box :convoc %>
+    <%= check_box_tag "roster[convoc]" %>
+    <label for="convoc"> <%= f.label :convoc %> </label>
   </div>
+
   <div class="field">
-    <%= f.label :but %><br />
-    <%= f.check_box :but %>
+    <%= check_box_tag "roster[but]" %>
+    <label for="but"> <%= f.label :but %> </label>
   </div>
+
   <div class="field">
     <%= f.label :butvilledepart %><br />
     <%= f.text_field :butvilledepart %>
   </div>
   <div class="field">
     <%= f.label :harrivee %><br />
-    <%= f.time_select :harrivee, :prompt => {:hour => '22', :minute => '40'} %>
+    <%= f.datetime_select :harrivee, :start_year => rmission.debutannee, :end_year => rmission.finannee, :default => { :month => rmission.debutmois }, :prompt => {:month => rmission.debutmois, :day => rmission.debutjour, :hour => '22', :minute => '30'} %>
   </div>
   <div class="field">
     <%= f.label :hdepart %><br />
-    <%= f.time_select :hdepart, :prompt => {:hour => '17', :minute => '00'} %>
+    <%= f.datetime_select :hdepart, :start_year => rmission.debutannee, :end_year => rmission.finannee, :default => { :month => rmission.finmois}, :prompt => {:month => rmission.finmois, :day => rmission.finjour, :hour => '17', :minute => '30'} %>
   </div>
   <div class="field">
      <%= f.label :comment %><br />
      <%= f.text_area :comment %>
   </div>
 
-   <div class="field">
+
+  <div class="field">
    <!--On affiche ici tous les jours de convocation de la mission-->
    <!--Selon le jour, on vérifie si le personnel avait déjà dit ok pour ce jour, la checkbox sera alors cochée par défaut-->
    <!--On ajoute dans paramas un tableau appelé "present" pour lister les jours cochés à traiter par l'action update du controller-->
-   <% Convocationjours.where(:mission_id => @roster.mission_id).each do |dconvoc|  %>
-
-   <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjours_id(@roster.id,dconvoc.id).nil?) %>
-   <%= label_tag "roster[present][]", dconvoc.jourconvoc %>
+    <% Convocationjour.where(:mission_id => @roster.mission_id).order("jourconvoc ASC").each do |dconvoc|  %>
+        <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjours_id(@roster.id,dconvoc.id).nil?, :id => dconvoc.id) %>
+        <label for="<%= dconvoc.id %>"> <%= dconvoc.jourconvoc.to_formatted_s(:short) %> </label>
     <% end %>
   </div>
+
+
 
   <div class="actions">
     <%= f.submit %>

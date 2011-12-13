@@ -105,4 +105,12 @@ class RostersController < ApplicationController
         format.json { head :ok }
       end
     end
+
+    def nevientpas
+      @roster = Roster.find(params[:roster_id])
+      Jour.destroy_all(:roster_id => @roster.id)
+      redirect_to edit_roster_path(@roster), notice: 'Vous ne serez pas present a la seance.'
+
+
+    end
   end

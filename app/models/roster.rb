@@ -19,12 +19,10 @@ class Roster < ActiveRecord::Base
   belongs_to :user
   has_one :mission
   has_many :jours, :dependent => :destroy
-  has_many :convocationjourses, :through => :jours
+  has_many :convocationjours, :through => :jours
 
 
   attr_accessible :user_id, :mission_id, :convoc, :but, :butvilledepart, :comment, :harrivee, :hdepart
   validates :user_id, :uniqueness => {:message => "Une seule declaration de presence" }
-
-
 
 end

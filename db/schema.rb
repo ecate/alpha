@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111207085244) do
+ActiveRecord::Schema.define(:version => 20111213143551) do
 
   create_table "convocationjours", :force => true do |t|
     t.integer  "mission_id"

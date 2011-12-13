@@ -185,8 +185,8 @@ fr:
         convoc: "Besoin convocation"
         but: "Besoin BUT ?"
         butvilledepart: "BUT - Ville de residence"
-        harrivee: "Heure d'arrivee"
-        hdepart: "Heure de départ"
+        harrivee: "Date et heure d'arrivée"
+        hdepart: "Date et heure de départ"
         comment: "Commentaire"
 
 

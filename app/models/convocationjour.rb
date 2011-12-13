@@ -9,7 +9,7 @@
 #  updated_at :datetime
 #
 
-class Convocationjours < ActiveRecord::Base
+class Convocationjour < ActiveRecord::Base
   has_many :missions
   has_many :jours, :dependent => :destroy
   has_many :rosters, :through => :jours

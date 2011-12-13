@@ -1,0 +1,83 @@
+
+
+<%= form_for @roster do |f| %>
+
+  <% if @roster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@roster.errors.count, "error") %> prohibited this roster from being saved:</h2>
+
+      <ul>
+      <% @roster.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <div class="field" data-role="fieldcontain">
+  <fieldset data-role="controlgroup" data-type="horizontal">
+           <legend>A quelles dates venez-vous ?</legend>
+            <!--On affiche ici tous les jours de convocation de la mission-->
+            <!--Selon le jour, on vérifie si le personnel avait déjà dit ok pour ce jour, la checkbox sera alors cochée par défaut-->
+            <!--On ajoute dans paramas un tableau appelé "present" pour lister les jours cochés à traiter par l'action update du controller-->
+           <% Convocationjour.where(:mission_id => @roster.mission_id).each do |dconvoc|  %>
+            <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjours_id(@roster.id,dconvoc.id).nil?, :id => dconvoc.id) %>
+            <label for="<%= dconvoc.id %>"> <%= dconvoc.jourconvoc.to_formatted_s(:short) %> </label>
+            <% end %>
+        </fieldset>
+    </div>
+
+
+
+  <div class="field" data-role="fieldcontain">
+    <%= f.label :convoc %><br />
+    <%= f.check_box :convoc, :as => :radio %>
+  </div>
+  <div class="field" data-role="fieldcontain">
+    <%= f.label :but %><br />
+    <%= f.check_box :but %>
+  </div>
+
+
+
+
+
+  <div class="field" data-role="fieldcontain">
+    <%= f.label :butvilledepart %><br />
+    <%= f.text_field :butvilledepart %>
+  </div>
+
+
+  <div class="field">
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>Heure Arrivée:</legend>
+
+    <%= f.time_select :harrivee, :prompt => {:hour => '22', :minute => '40'}%>
+    </fieldset>
+  </div>
+
+  <div class="field">
+    <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>Heure Départ:</legend>
+
+    <%= f.time_select :hdepart, :prompt => {:hour => '17', :minute => '00'} %>
+    </fieldset>
+  </div>
+
+  <div class="field" data-role="fieldcontain">
+     <%= f.label :comment %><br />
+     <%= f.text_area :comment %>
+
+  </div>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+<% end %>
