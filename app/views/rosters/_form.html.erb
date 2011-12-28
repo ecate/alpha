@@ -49,6 +49,7 @@
         <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjours_id(@roster.id,dconvoc.id).nil?, :id => dconvoc.id) %>
         <label for="<%= dconvoc.id %>"> <%= dconvoc.jourconvoc.to_formatted_s(:short) %> </label>
     <% end %>
+    <%= hidden_field_tag "roster[present][]", "" %>
   </div>
 
 

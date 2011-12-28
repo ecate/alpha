@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d80f91ad-6508-4007-be6e-69019d697862" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/rosters/_formmobile.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/models/convocationjours.rb" afterPath="$PROJECT_DIR$/app/models/convocationjour.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/alpha.iml" afterPath="$PROJECT_DIR$/.idea/alpha.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/rosters_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/rosters_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/jour.rb" afterPath="$PROJECT_DIR$/app/models/jour.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/mission.rb" afterPath="$PROJECT_DIR$/app/models/mission.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/roster.rb" afterPath="$PROJECT_DIR$/app/models/roster.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rosters/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/rosters/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rosters/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/rosters/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rosters/new.html.erb" afterPath="$PROJECT_DIR$/app/views/rosters/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/fr.yml" afterPath="$PROJECT_DIR$/config/locales/fr.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="alpha.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +32,7 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/rosters/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="147" selection-start="1286" selection-end="1286" vertical-scroll-proportion="-5.897959">
+            <state line="35" column="147" selection-start="1286" selection-end="1286" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -77,7 +59,7 @@
       <file leaf-file-name="fr.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/locales/fr.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="29" selection-start="4162" selection-end="4162" vertical-scroll-proportion="-15.44">
+            <state line="188" column="29" selection-start="4162" selection-end="4162" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,7 +86,7 @@
       <file leaf-file-name="mission.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/mission.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="84" selection-start="535" selection-end="535" vertical-scroll-proportion="0.6761269">
+            <state line="27" column="84" selection-start="535" selection-end="535" vertical-scroll-proportion="0.325">
               <folding />
             </state>
           </provider>
@@ -122,7 +104,7 @@
       <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/rosters/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="43" selection-start="355" selection-end="355" vertical-scroll-proportion="-5.625">
+            <state line="9" column="43" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,7 +113,7 @@
       <file leaf-file-name="roster.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/roster.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="24" selection-start="468" selection-end="468" vertical-scroll-proportion="-11.4">
+            <state line="19" column="24" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -196,9 +178,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
       <pane id="Scope" />
-      <pane id="RailsProjectView" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -489,6 +470,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -792,20 +774,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1602" height="880" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14663143" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14531043" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35535008" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27474618" sideWeight="0.663144" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14467005" sideWeight="0.8533686" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14467005" sideWeight="0.85468954" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32760897" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35535008" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.7792" order="2" side_tool="false" content_ui="combo" />
@@ -857,114 +839,84 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="229" selection-end="290" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="0" selection-start="229" selection-end="290" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="9" column="13" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/rosters/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="22" selection-start="330" selection-end="330" vertical-scroll-proportion="-9.833333">
-          <folding />
-        </state>
+        <state line="16" column="22" selection-start="330" selection-end="330" vertical-scroll-proportion="-9.833333" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="16" selection-start="935" selection-end="935" vertical-scroll-proportion="-13.125">
-          <folding />
-        </state>
+        <state line="21" column="16" selection-start="935" selection-end="935" vertical-scroll-proportion="-13.125" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20111207085244_remove_codeactivite_from_rosters.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20111213104712_rename_convocationjours_to_convocationjour.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="85" selection-end="133" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20111213143551_rename_convocationjour_to_convocationjours.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="52" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="52" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/rosters/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="23" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="35" column="147" selection-start="1286" selection-end="1286" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/roster.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/rosters_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="24" selection-start="468" selection-end="468" vertical-scroll-proportion="-11.4">
-          <folding />
-        </state>
+        <state line="22" column="32" selection-start="498" selection-end="524" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/jour.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="59" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/fr.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="29" selection-start="4162" selection-end="4162" vertical-scroll-proportion="-15.44">
+        <state line="188" column="29" selection-start="4162" selection-end="4162" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="23" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20111213104712_rename_convocationjours_to_convocationjour.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="4" selection-start="85" selection-end="133" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/mission.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="84" selection-start="535" selection-end="535" vertical-scroll-proportion="0.325">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/convocationjour.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="14" column="39" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/rosters/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="43" selection-start="355" selection-end="355" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
+        <state line="9" column="43" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/rosters_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/roster.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="32" selection-start="498" selection-end="524" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/rosters/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="147" selection-start="1286" selection-end="1286" vertical-scroll-proportion="-5.897959">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/jour.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="59" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/mission.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="84" selection-start="535" selection-end="535" vertical-scroll-proportion="0.6761269">
-          <folding />
-        </state>
+        <state line="19" column="24" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
   </component>
