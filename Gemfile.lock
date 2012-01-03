@@ -66,7 +66,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
-    mysql (2.8.1-x86-mingw32)
+    mysql2 (0.3.11-x86-mingw32)
     orm_adapter (0.0.5)
     pg (0.12.0)
       rake-compiler (~> 0.7)
@@ -142,7 +142,7 @@ DEPENDENCIES
   heroku_external_db
   hirb
   jquery-rails
-  mysql
+  mysql2
   pg
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)

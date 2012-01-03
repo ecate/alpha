@@ -8,6 +8,7 @@ gem 'formtastic'
 gem 'execjs'
 gem 'jquery-rails'
 gem 'heroku_external_db'
+gem 'mysql2'
 
 # To format data in irb console
 gem 'hirb'
@@ -28,5 +29,4 @@ end
 group :production do
   gem 'pg'
   gem 'therubyracer'
-  gem 'mysql'
 end
