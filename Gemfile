@@ -28,5 +28,5 @@ end
 group :production do
   gem 'pg'
   gem 'therubyracer'
-  gem 'mysql2'
+  gem 'mysql'
 end
