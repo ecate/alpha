@@ -26,3 +26,11 @@ test:
   database: alpha_test
   pool: 5
   timeout: 5000
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: db392644400
+  username: dbo392644400
+  password: 53Compagnie1953
+  host: db392644400.db.1and1.com

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Mission.create!([{:name => "seance fevrier"},{:name => "Garde à besançon mars"} ])
+Convocationjour.create!([{:mission_id => 1, :jourconvoc => Date.today},{:mission_id => 1, :jourconvoc => Date.today + 1.day},{:mission_id => 1, :jourconvoc => Date.today + 2.days},{:mission_id => 1, :jourconvoc => Date.today + 3.days},{:mission_id => 2, :jourconvoc => Date.today + 10.days},{:mission_id => 2, :jourconvoc => Date.today + 11.days}])

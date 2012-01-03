@@ -25,6 +25,7 @@ group :assets do
 end
 
 group :production do
- gem 'therubyracer'
   gem 'pg'
+  gem 'therubyracer'
+  gem 'mysql2'
 end
