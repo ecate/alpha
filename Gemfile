@@ -7,6 +7,7 @@ gem 'cancan'
 gem 'formtastic'
 gem 'execjs'
 gem 'jquery-rails'
+gem 'heroku_external_db'
 
 # To format data in irb console
 gem 'hirb'
