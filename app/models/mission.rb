@@ -2,10 +2,11 @@
 #
 # Table name: missions
 #
-#  id         :integer(4)      not null, primary key
-#  name       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id            :integer(4)      not null, primary key
+#  name          :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  code_activite :integer(4)
 #
 
 class Mission < ActiveRecord::Base
@@ -14,6 +15,9 @@ class Mission < ActiveRecord::Base
 
   has_many :jours, :through => :rosters
   has_many :users, :through => :rosters
+
+  attr_accessible :name, :code_activite
+  accepts_nested_attributes_for :convocationjours
 
 
   def debutannee

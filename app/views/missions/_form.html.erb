@@ -10,7 +10,22 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
 
+   <div class="field">
+    <%= f.label :code_activite %><br />
+    <%= f.number_field :code_activite %>
+  </div>
+
+   <p>​
+ 	​  <%= f.fields_for(:convocationjours) do |convocationjours_form| %>​
+ 	​    <%= convocationjours_form.label :jourconvoc %>​
+ 	​    <%= convocationjours_form.date_select :jourconvoc %>​
+ 	​  <% end %>​
+ 	​  </p>​
 
   <div class="actions">
     <%= f.submit %>

@@ -25,7 +25,7 @@
         :fields:
           - id
           - roster_id
-          - convocationjours_id
+          - convocationjour_id
 
   Mission:
       :options:

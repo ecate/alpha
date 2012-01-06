@@ -10,7 +10,7 @@
 #
 
 class Convocationjour < ActiveRecord::Base
-  has_many :missions
+  belongs_to :mission, :dependent => :destroy
   has_many :jours, :dependent => :destroy
   has_many :rosters, :through => :jours
 

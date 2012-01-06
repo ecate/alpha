@@ -41,7 +41,7 @@ class RostersController < ApplicationController
     def create
       @roster = Roster.new(params[:roster])
       @roster.user_id = current_user.id
-      @roster.mission_id= '1'
+      @roster.mission_id= 2
       respond_to do |format|
         if @roster.save
           format.html { redirect_to @roster, notice: 'Roster was successfully created.' }
@@ -63,22 +63,22 @@ class RostersController < ApplicationController
 
       # Le personnel ne vient pas à la séance
       if presents.nil?
-        Jour.destroy_all(:roster_id => @roster.id)
+        Jour.delete_all(:roster_id => @roster.id)
       else
         #Etape 1 : On supprime les jours qui ont été décochés par rapport à la fois précédente
         Jour.find_all_by_roster_id(@roster.id).each do |jid|
-          jourid = jid.convocationjours_id
+          jourid = jid.convocationjour_id
 
           if presents.include?(jourid.to_s)
             presents.delete(jourid.to_s)
           else
-            Jour.find_by_convocationjours_id(jourid).destroy
+            Jour.find_by_convocationjour_id(jourid).destroy
           end
         end
         #Etape 2 : On ajoute les jours nouvellement cochés
         unless presents.empty?
           presents.each do |njour|
-            Jour.create(roster_id: @roster.id, convocationjours_id: njour.to_i)
+            Jour.create!(roster_id: @roster.id, convocationjour_id: njour.to_i)
           end
         end
       end
@@ -108,7 +108,7 @@ class RostersController < ApplicationController
 
     def nevientpas
       @roster = Roster.find(params[:roster_id])
-      Jour.destroy_all(:roster_id => @roster.id)
+      Jour.delete_all(:roster_id => @roster.id)
       redirect_to edit_roster_path(@roster), notice: 'Vous ne serez pas present a la seance.'
 
 

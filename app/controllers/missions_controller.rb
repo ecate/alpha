@@ -24,7 +24,7 @@ class MissionsController < ApplicationController
   # GET /missions/new
   # GET /missions/new.json
   def new
-    @mission = Mission.new
+    @mission = Mission.new(:convocationjours => [Convocationjour.new])
 
     respond_to do |format|
       format.html # new.html.erb

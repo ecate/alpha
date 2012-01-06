@@ -22,7 +22,7 @@
             <!--Selon le jour, on vérifie si le personnel avait déjà dit ok pour ce jour, la checkbox sera alors cochée par défaut-->
             <!--On ajoute dans paramas un tableau appelé "present" pour lister les jours cochés à traiter par l'action update du controller-->
            <% Convocationjour.where(:mission_id => @roster.mission_id).each do |dconvoc|  %>
-            <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjours_id(@roster.id,dconvoc.id).nil?, :id => dconvoc.id) %>
+            <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjour_id(@roster.id,dconvoc.id).nil?, :id => dconvoc.id) %>
             <label for="<%= dconvoc.id %>"> <%= dconvoc.jourconvoc.to_formatted_s(:short) %> </label>
             <% end %>
         </fieldset>

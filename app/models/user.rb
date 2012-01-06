@@ -16,6 +16,9 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  role                   :string(255)
+#  nom                    :string(255)
+#  prenom                 :string(255)
+#  grade                  :integer(4)
 #
 
 class User < ActiveRecord::Base
