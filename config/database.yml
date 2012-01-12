@@ -6,8 +6,7 @@
 # Ensure the MySQL gem is defined in your Gemfile
 #   gem 'mysql2'
 #
-# And be sure to use new-style password hashing:
-#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+
 development:
   adapter: mysql2
   encoding: utf8
@@ -25,16 +24,15 @@ test:
   adapter: sqlite3
   encoding: utf8
   reconnect: false
-  database: alpha_test
+  database: db/alpha_test
   pool: 5
   timeout: 5000
 
 production:
-  adapter: mysql2
+  adapter: sqlite3
   encoding: utf8
   reconnect: false
-  database: db392644400
+  database: db/alpha_production
   pool: 5
-  host: db392644400.db.1and1.com
-  username: dbo392644400
-  password: 53Compagnie1953
+  timeout: 5000
+
