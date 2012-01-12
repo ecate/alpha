@@ -30,7 +30,7 @@
 
     <td><%= link_to 'Details', roster %></td>
     <td><%= link_to 'Modifier', edit_roster_path(roster) %></td>
-    <td><%= link_to 'Supprimer', roster, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Supprimer', roster, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
