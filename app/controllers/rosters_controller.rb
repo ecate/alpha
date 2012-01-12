@@ -7,7 +7,7 @@ class RostersController < ApplicationController
 
       respond_to do |format|
         format.html # index.html.erb
-        format.json { render json: @rosters }
+        format.json { render :json => @rosters }
       end
     end
 
@@ -15,7 +15,7 @@ class RostersController < ApplicationController
       @roster = Roster.find(params[:id])
         respond_to do |format|
           format.html # show.html.erb
-          format.json { render json: @roster }
+          format.json { render :json => @roster }
         end
     end
 
@@ -26,7 +26,7 @@ class RostersController < ApplicationController
         @roster.mission_id= '1'
           respond_to do |format|
             format.html # new.html.erb
-            format.json { render json: @roster }
+            format.json { render :json => @roster }
           end
       else
         redirect_to edit_roster_path(current_user.roster)
@@ -44,11 +44,11 @@ class RostersController < ApplicationController
       @roster.mission_id= 2
       respond_to do |format|
         if @roster.save
-          format.html { redirect_to @roster, notice: 'Roster was successfully created.' }
-          format.json { render json: @roster, status: :created, location: @roster }
+          format.html { redirect_to @roster, :notice => 'Roster was successfully created.' }
+          format.json { render :json => @roster, :status => :created, :location => @roster }
         else
-          format.html { render action: "new" }
-          format.json { render json: @roster.errors, status: :unprocessable_entity }
+          format.html { render :action => "new" }
+          format.json { render :json => @roster.errors, :status => :unprocessable_entity }
         end
       end
     end
@@ -78,7 +78,7 @@ class RostersController < ApplicationController
         #Etape 2 : On ajoute les jours nouvellement cochés
         unless presents.empty?
           presents.each do |njour|
-            Jour.create!(roster_id: @roster.id, convocationjour_id: njour.to_i)
+            Jour.create!(:roster_id => @roster.id, :convocationjour_id => njour.to_i)
           end
         end
       end
@@ -87,11 +87,11 @@ class RostersController < ApplicationController
       #Etape 3 : on update le reste de l'objet Roster
       respond_to do |format|
         if @roster.update_attributes(params[:roster])
-          format.html { redirect_to @roster, notice: 'Votre compte-rendu de presence est enregistre.'}
+          format.html { redirect_to @roster, :notice => 'Votre compte-rendu de presence est enregistre.'}
           format.json { head :ok }
         else
-          format.html { render action: "edit" }
-          format.json { render json: @roster.errors, status: :unprocessable_entity }
+          format.html { render :action => "edit" }
+          format.json { render :json => @roster.errors, :status => :unprocessable_entity }
         end
       end
   end
@@ -109,8 +109,6 @@ class RostersController < ApplicationController
     def nevientpas
       @roster = Roster.find(params[:roster_id])
       Jour.delete_all(:roster_id => @roster.id)
-      redirect_to edit_roster_path(@roster), notice: 'Vous ne serez pas present a la seance.'
-
-
+      redirect_to edit_roster_path(@roster), :notice => 'Vous ne serez pas present a la seance.'
     end
   end

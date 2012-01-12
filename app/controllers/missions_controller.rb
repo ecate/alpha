@@ -6,7 +6,7 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @missions }
+      format.json { render :json => @missions }
     end
   end
 
@@ -17,7 +17,7 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @mission }
+      format.json { render :json => @mission }
     end
   end
 
@@ -28,7 +28,7 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @mission }
+      format.json { render :json => @mission }
     end
   end
 
@@ -44,11 +44,11 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       if @mission.save
-        format.html { redirect_to @mission, notice: 'Mission was successfully created.' }
-        format.json { render json: @mission, status: :created, location: @mission }
+        format.html { redirect_to @mission, :notice => 'Mission was successfully created.' }
+        format.json { render :json => @mission, :status => :created, :location => @mission }
       else
-        format.html { render action: "new" }
-        format.json { render json: @mission.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @mission.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -60,11 +60,11 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       if @mission.update_attributes(params[:mission])
-        format.html { redirect_to @mission, notice: 'Mission was successfully updated.' }
+        format.html { redirect_to @mission, :notice => 'Mission was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @mission.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @mission.errors, :status => :unprocessable_entity }
       end
     end
   end
