@@ -11,7 +11,7 @@
   <tr>
     <td><%= link_to 'Show', mission %></td>
     <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
-    <td><%= link_to 'Destroy', mission, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', mission, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

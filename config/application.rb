@@ -52,6 +52,6 @@ module Alpha
     config.assets.version = '1.0'
 
     #If you are deploying Rails 3.1 on Heroku, you may want to set this attribute to false
-    #config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
   end
 end
