@@ -5,39 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d80f91ad-6508-4007-be6e-69019d697862" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/buttons/icons/cross.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/buttons/icons/key.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/buttons/icons/tick.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/buttons/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/buttons/screen.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/fancy-type/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/fancy-type/screen.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/doc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/email.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/external.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/feed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/im.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/lock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/pdf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/visited.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/icons/xls.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/link-icons/screen.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/rtl/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/plugins/rtl/screen.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/screen.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/src/forms.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/src/grid.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/src/grid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/src/ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/src/print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/src/reset.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/blueprint/src/typography.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/missions/index.html.erb" afterPath="$PROJECT_DIR$/app/views/missions/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
     </list>
     <ignored path="alpha.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,91 +36,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="missions.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/missions.js.coffee">
+      <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="28" column="12" selection-start="485" selection-end="485" vertical-scroll-proportion="0.7682119">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roster.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/roster.js.coffee">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rosters.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/rosters.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/user.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="missions.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/missions.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="roster.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/roster.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rosters.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/rosters.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scaffolds.css.scss" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="55" selection-start="500" selection-end="500" vertical-scroll-proportion="0.30835736">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/user.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="10" column="33" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,13 +68,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/rosters/_formmobile.html.erb" />
         <option value="$PROJECT_DIR$/config/hirb.yml" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/models/mission.rb" />
         <option value="$PROJECT_DIR$/app/views/missions/_form.html.erb" />
-        <option value="$PROJECT_DIR$/config/database.yml" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/initializers/session_store.rb" />
         <option value="$PROJECT_DIR$/config/initializers/wrap_parameters.rb" />
         <option value="$PROJECT_DIR$/app/controllers/rosters_controller.rb" />
@@ -184,6 +81,9 @@
         <option value="$PROJECT_DIR$/app/views/missions/index.html.erb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
       </list>
     </option>
   </component>
@@ -343,6 +243,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alpha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="environments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -734,13 +652,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="126" y="195" width="1620" height="892" extended-state="6" />
+    <frame x="79" y="175" width="1620" height="892" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14457831" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35207498" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35207498" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32797858" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -802,34 +720,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/missions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/missions/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/missions/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="49" selection-start="2382" selection-end="2382" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="42" selection-start="235" selection-end="235" vertical-scroll-proportion="-4.375">
@@ -852,13 +742,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/roster.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/rosters.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -909,7 +792,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="55" selection-start="500" selection-end="500" vertical-scroll-proportion="0.30835736">
+        <state line="27" column="55" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="70" selection-start="344" selection-end="426" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="67" selection-start="1137" selection-end="1137" vertical-scroll-proportion="0.62849164">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/rosters.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="33" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="12" selection-start="485" selection-end="485" vertical-scroll-proportion="0.7682119">
           <folding />
         </state>
       </provider>

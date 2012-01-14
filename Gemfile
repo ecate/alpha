@@ -11,14 +11,14 @@ gem 'execjs'
 gem 'jquery-rails'
 gem 'pg'
 gem 'therubyracer'
-gem "sqlite3", "~> 1.3.4"
+#gem "sqlite3", "~> 1.3.4"
+gem 'mysql2'
 
 # To format data in irb console
 gem 'hirb'
 
 group :development do
     gem 'annotate', '2.4.1.beta1'
-    #gem 'mysql2'
 end
 
 # Gems used only for assets and not required
