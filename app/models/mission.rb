@@ -7,6 +7,7 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  code_activite :integer(4)
+#  encours       :boolean(1)
 #
 
 class Mission < ActiveRecord::Base
@@ -16,8 +17,8 @@ class Mission < ActiveRecord::Base
   has_many :jours, :through => :rosters
   has_many :users, :through => :rosters
 
-  attr_accessible :name, :code_activite
-  accepts_nested_attributes_for :convocationjours
+  accepts_nested_attributes_for :convocationjours, :reject_if => lambda { |a| a.all? { |key, value| value.blank? } }, :allow_destroy => true
+  attr_accessible :name, :code_activite, :encours, :convocationjours_attributes, :convocationjours
 
 
   def debutannee
@@ -49,4 +50,13 @@ class Mission < ActiveRecord::Base
     self.convocationjours.sort_by(&:jourconvoc).last.jourconvoc.day
 
   end
+  def with_blank_convocationjours(n = 4)
+      n.times do
+        convocationjours.build
+      end
+      return self
+    end
+
+
 end
+

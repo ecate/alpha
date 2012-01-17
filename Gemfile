@@ -9,10 +9,13 @@ gem 'cancan'
 gem 'formtastic'
 gem 'execjs'
 gem 'jquery-rails'
-gem 'pg'
+#gem 'pg'
 gem 'therubyracer'
 #gem "sqlite3", "~> 1.3.4"
 gem 'mysql2'
+
+#creer les liens add /remove items
+gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
 
 # To format data in irb console
 gem 'hirb'
