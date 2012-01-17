@@ -5,6 +5,7 @@
         - id
         - email
         - role
+        - actif
 
 
   Roster:
@@ -32,6 +33,7 @@
         :fields:
           - id
           - name
+          - encours
 
   Convocationjour:
       :options:

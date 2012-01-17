@@ -12,19 +12,19 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: db/alpha_development
+  database: alpha_development
   pool: 5
   username: root
   password: oracle
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
 
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: db/alpha_production
+  database: alpha_production
   pool: 5
   username: root
   password: oracle
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock

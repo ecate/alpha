@@ -1,40 +1,56 @@
 <h1>Présence prévisionelle</h1>
 
-<table>
-  <tr>
-    <th>Codeactivite</th>
-    <th>Personnel</th>
-    <th>Nb jours présents</th>
-    <th>Convocation ? </th>
-    <th>BUT ?</th>
-    <th>Ville domicile</th>
-    <th>Heure arrivee</th>
-    <th>Heure Depart</th>
-    <th>Commentaire</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<!--Pour toutes les missions en cours-->
+ <!--créer une table-->
+     <!--entete : personnel / tous les jours de convocations de la mission / total-->
+     <!--Pour chaque user dont le roster n'est pas égal à 0   (sinon mettre dans une liste)-->
+         <!--user.name / Jour.find_by_roster_id_and_convocationjour_id(user.roster_mission(mission), convocation_id).nil? / user.roster_mission(mission).jours.count-->
+ <!--fin table-->
+ <!--Ne vient pas : afficher la liste dont le personnel est à zéro-->
+   <!--fin mission en cours-->
 
-<% @rosters.each do |roster| %>
-  <tr>
-    <td><%= roster.mission_id %></td>
-    <td><%= roster.user_id %></td>
-    <td><%= roster.jours.count %></td>
-    <td><%= roster.convoc %></td>
-    <td><%= roster.but %></td>
-    <td><%= roster.butvilledepart %></td>
-    <td><%= roster.harrivee %></td>
-    <td><%= roster.hdepart %></td>
-    <td><%= roster.comment %></td>
 
-    <td><%= link_to 'Details', roster %></td>
-    <td><%= link_to 'Modifier', edit_roster_path(roster) %></td>
-    <td><%= link_to 'Supprimer', roster, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+ <% Mission.where(:encours => true).each do |m| %>
+    <h3> Mission : <%= m.name %></h3>
+    <% liste=Array.new %>
+    <table id='rosters'>
+      <tbody>
+        <tr>
+          <th> Personnel </th>
+          <% Convocationjour.where(:mission_id => m.id).each do |convoc| %>
+            <th> <%= I18n.l(convoc.jourconvoc) %> </th>
+          <% end %>
+          <th>Total</th>
+        </tr>
+          <% User.where(:actif => true).each do |soldat| %>
+            <%if !soldat.roster_mission(m.id).nil? %>
 
-<br />
+                <% if soldat.roster_mission(m.id).jours.count != 0 %>
+                <tr>
+                    <td><%= link_to soldat.email, edit_roster_path(soldat.roster_mission(m.id))  %></td>
+                        <% Convocationjour.where(:mission_id => m.id).each do |convoc| %>
+                                   <td>
+                                     <%if !Jour.where(:roster_id => soldat.roster_mission(m.id).id, :convocationjour_id => convoc.id).empty? %>
+                                         X
+                                     <% end %>
+                                   </td>
+                        <% end %>
+                      <td> <%= soldat.roster_mission(m.id).jours.count %> </td>
 
-<%= link_to 'New Roster', new_roster_path %>
+                  </tr>
+                <%else%>
+                    <% liste << soldat %>
+                <% end %>
+            <%end %>
+          <% end %>
+
+
+      </tbody>
+    </table>
+    <ul> Ne vient pas :
+    <% liste.each do |soldat| %>
+        <li> <%= link_to soldat.email, edit_roster_path(soldat.roster_mission(m.id)) %> </li>
+    <%end%>
+    </ul>
+
+ <% end %>

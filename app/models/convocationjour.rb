@@ -14,4 +14,6 @@ class Convocationjour < ActiveRecord::Base
   has_many :jours, :dependent => :destroy
   has_many :rosters, :through => :jours
 
+  attr_accessible :jourconvoc, :mission_id
+
 end

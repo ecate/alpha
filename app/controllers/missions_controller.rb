@@ -32,6 +32,10 @@ class MissionsController < ApplicationController
     end
   end
 
+  def form_prealloc
+    @mission = Mission.new
+  end
+
   # GET /missions/1/edit
   def edit
     @mission = Mission.find(params[:id])
@@ -44,7 +48,7 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       if @mission.save
-        format.html { redirect_to @mission, :notice => 'Mission was successfully created.' }
+        format.html { redirect_to @mission, :notice => 'La mission est cree.' }
         format.json { render :json => @mission, :status => :created, :location => @mission }
       else
         format.html { render :action => "new" }

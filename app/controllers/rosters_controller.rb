@@ -29,7 +29,7 @@ class RostersController < ApplicationController
             format.json { render :json => @roster }
           end
       else
-        redirect_to edit_roster_path(current_user.roster)
+        redirect_to edit_roster_path(Roster.find_by_user_id(current_user))
       end
     end
 
@@ -72,7 +72,7 @@ class RostersController < ApplicationController
           if presents.include?(jourid.to_s)
             presents.delete(jourid.to_s)
           else
-            Jour.find_by_convocationjour_id(jourid).destroy
+            Jour.find_by_convocationjour_id(jourid).delete
           end
         end
         #Etape 2 : On ajoute les jours nouvellement cochés
@@ -95,16 +95,6 @@ class RostersController < ApplicationController
         end
       end
   end
-
-    def destroy
-      @roster = Roster.find(params[:id])
-      @roster.destroy
-
-      respond_to do |format|
-        format.html { redirect_to rosters_url }
-        format.json { head :ok }
-      end
-    end
 
     def nevientpas
       @roster = Roster.find(params[:roster_id])

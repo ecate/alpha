@@ -1,3 +1,49 @@
+
 // Place all the styles related to the Roster controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#rosters {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 60%;
+    border-collapse: collapse;
+}
+
+table, th, td, input, textarea {
+font-size: 100%;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+
+#rosters td, #rosters th {
+    font-size: 1.2em;
+    border: 1px solid #C0C0C0;
+    padding: 3px 7px 2px 7px;
+    border-image: initial;
+}
+
+#rosters th {
+    font-size: 1.4em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #4682B4;
+    color: white;
+}
+
+

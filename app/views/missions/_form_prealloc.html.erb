@@ -1,7 +1,9 @@
-<%= form_for @mission do |f| %>
+<%#START:form_for%>
+<%= nested_form_for @mission do |f| %>
+<%#END:form_for%>
   <% if @mission.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@mission.errors.count, "error") %> prohibited this mission from being saved:</h2>
+      <h2><%= pluralize(@mission.errors.count, "erreurs") %> empêchent d'enregistrer la mission :</h2>
 
       <ul>
       <% @mission.errors.full_messages.each do |msg| %>
@@ -10,6 +12,7 @@
       </ul>
     </div>
   <% end %>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -23,23 +26,19 @@
     <div class="field">
       <p> La mission est-elle en d'actualité ?
     <%= f.label :encours, 'En cours', :value => true %>
-    <%= f.radio_button :encours, true %>
+    <%= f.radio_button :encours, true, :checked => true %>
     <%= f.label :encours, 'Non active', :value => false %>
     <%= f.radio_button :encours, false %>
      </p>
   </div>
 
-   <h3> Dates de convocation</h3>
-   <ol>
- 	​  <%= f.fields_for(:convocationjours) do |convocationjours_form| %>​
- 	​    <li>
-            <%= convocationjours_form.date_select :jourconvoc %>​
-            <%= unless convocationjours_form.object.new_record?
-               convocationjours_form.check_box('_destroy') + convocationjours_form.label('_destroy', 'Enlever')
-            end %>​
-        </li>
-     <% end %>​
- 	​ </ol>​
+    <h3> Dates de convocation</h3>
+   <ol>​
+ 	​  <%= f.fields_for :convocationjours do |convocationjours_form| %>​
+ 	​    <li>  <%= convocationjours_form.date_select :jourconvoc %>  <%=  convocationjours_form.link_to_remove "Supprimer cette date" %> </li>
+       <% end %>​
+    </ol>​
+    <p><%= f.link_to_add "Ajouter une date", :convocationjours %></p>
 
   <div class="actions">
     <%= f.submit %>

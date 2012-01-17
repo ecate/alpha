@@ -39,6 +39,8 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:users])
+    @user.actif = true
+
 
     respond_to do |format|
       if @user.save
