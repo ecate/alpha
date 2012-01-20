@@ -57,7 +57,7 @@ EOMSG
     def backtrace(*modifiers)
       trace_framework = modifiers.include?(:framework)
       trace_ruby = modifiers.length == 0 || modifiers.include?(:ruby)
-      trace_javascript = modifiers.length == 0 || modifiers.include?(:javascript)
+      trace_javascript = modifiers.length == 0 || modifiers.include?(:javascripts)
       mixed = []
       rbcontext = []
       jscontext = []

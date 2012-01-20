@@ -31,15 +31,14 @@
     <%= f.radio_button :encours, false %>
      </p>
   </div>
-
-    <h3> Dates de convocation</h3>
+   <h3> Dates de convocation</h3>
    <ol>​
  	​  <%= f.fields_for :convocationjours do |convocationjours_form| %>​
- 	​    <li>  <%= convocationjours_form.date_select :jourconvoc %>  <%=  convocationjours_form.link_to_remove "Supprimer cette date" %> </li>
+ 	​    <li>  <%= convocationjours_form.date_select :jourconvoc %>  <%=  convocationjours_form.link_to_remove "Supprimer la date" %> </li>
        <% end %>​
-    </ol>​
-    <p><%= f.link_to_add "Ajouter une date", :convocationjours %></p>
-
+    <%= f.link_to_add "Ajouter une date", :convocationjours %>
+    </ol>
+    <br/>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,4 +1,6 @@
-<%= form_for @mission do |f| %>
+<%#START:form_for%>
+<%= nested_form_for @mission do |f| %>
+<%#END:form_for%>
   <% if @mission.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mission.errors.count, "error") %> prohibited this mission from being saved:</h2>
@@ -28,19 +30,15 @@
     <%= f.radio_button :encours, false %>
      </p>
   </div>
-
    <h3> Dates de convocation</h3>
-   <ol>
- 	​  <%= f.fields_for(:convocationjours) do |convocationjours_form| %>​
- 	​    <li>
-            <%= convocationjours_form.date_select :jourconvoc %>​
-            <%= unless convocationjours_form.object.new_record?
-               convocationjours_form.check_box('_destroy') + convocationjours_form.label('_destroy', 'Enlever')
-            end %>​
-        </li>
-     <% end %>​
- 	​ </ol>​
+   <ol>​
+ 	​  <%= f.fields_for :convocationjours do |convocationjours_form| %>​
+ 	​    <li>  <%= convocationjours_form.date_select :jourconvoc %>  <%=  convocationjours_form.link_to_remove "Supprimer la date" %> </li>
+       <% end %>​
+    <%= f.link_to_add "Ajouter une date", :convocationjours %>
+    </ol>
 
+  <br/>
   <div class="actions">
     <%= f.submit %>
   </div>

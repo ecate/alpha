@@ -15,7 +15,7 @@ module Sass
         Sass::Script::String.new(%Q{url(#{public_path(asset.value, kind.value)})})
       end
 
-      [:image, :video, :audio, :javascript, :stylesheet].each do |asset_class|
+      [:image, :video, :audio, :javascripts, :stylesheet].each do |asset_class|
         class_eval %Q{
           def #{asset_class}_path(asset)
             Sass::Script::String.new(resolver.#{asset_class}_path(asset.value), true)

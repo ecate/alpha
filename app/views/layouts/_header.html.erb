@@ -1,16 +1,26 @@
 <%= csrf_meta_tag %>
-<header>
 
-  <nav class="round">
-    <ul>
-      <% if user_signed_in? %>
-            <!--<li><%= link_to "Profile", current_user %></li>-->
-            <li> Connecte en tant que <%= current_user.email %>. Ce n'est pas vous ? <%= link_to "Deconnexion", destroy_user_session_path, :method => :delete %> </li>
+<!--header -->
+<div id="header-wrap"><div id="header">
+	<a name="top"></a>
+       <% if user_signed_in? %>
+            Connecte en tant que <%= link_to current_user.email, current_user %>. Ce n'est pas vous ? <%= link_to "Deconnexion", destroy_user_session_path, :method => :delete %>
        <% else %>
-            <li><%= link_to "Connexion", new_user_session_path %> </li>
+           <%= link_to "Connexion", new_user_session_path %>
         <% end %>
-    </ul>
-  </nav>
-</header>
+	<div  id="nav">
+		<ul>
+			<li><a href="#"><%= link_to "Personnels", users_path %></a></li>
+			<li><a href="#"><%= link_to "SPA prévisionnels", rosters_path %></a></li>
+			<li><a href="#"><%= link_to "Missions", missions_path %></a></li>
+		</ul>
+	</div>
+
+<!--/header-->
+</div></div>
+
+
+
+
 
 

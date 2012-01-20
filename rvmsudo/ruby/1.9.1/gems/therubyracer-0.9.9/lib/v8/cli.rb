@@ -55,7 +55,7 @@ module V8
         cxt.load(libfile)
       rescue V8::JSError => e
         puts e.message
-        puts e.backtrace(:javascript)
+        puts e.backtrace(:javascripts)
       rescue StandardError => e
         puts e
       end
@@ -91,7 +91,7 @@ module V8
           puts(result) unless result.nil?                
         rescue V8::JSError => e
           puts e.message
-          puts e.backtrace(:javascript)
+          puts e.backtrace(:javascripts)
         rescue StandardError => e
           puts e
           puts e.backtrace.join("\n")

@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20120116095011) do
     t.string   "nom"
     t.string   "prenom"
     t.integer  "grade"
-    t.boolean  "actif", :default => true
+    t.boolean  "actif"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -43,7 +43,7 @@ module Rails
         class_option :database,           :type => :string, :aliases => "-d", :default => "sqlite3",
                                           :desc => "Preconfigure for selected database (options: #{DATABASES.join('/')})"
 
-        class_option :javascript,         :type => :string, :aliases => '-j', :default => 'jquery',
+        class_option :javascripts,         :type => :string, :aliases => '-j', :default => 'jquery',
                                           :desc => 'Preconfigure for selected JavaScript library'
 
         class_option :skip_javascript,    :type => :boolean, :aliases => "-J", :default => false,
@@ -200,7 +200,7 @@ module Rails
       end
 
       def javascript_gemfile_entry
-        "gem '#{options[:javascript]}-rails'" unless options[:skip_javascript]
+        "gem '#{options[:javascripts]}-rails'" unless options[:skip_javascript]
       end
 
       def assets_gemfile_entry

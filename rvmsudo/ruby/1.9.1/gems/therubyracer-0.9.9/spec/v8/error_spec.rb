@@ -81,7 +81,7 @@ describe V8::JSError do
     
     it "can be set to show only javascript frames" do
       throw! do |e|
-        e.backtrace(:javascript).each do |frame|
+        e.backtrace(:javascripts).each do |frame|
           frame.should =~ /\.js:\d:\d/
         end
       end
