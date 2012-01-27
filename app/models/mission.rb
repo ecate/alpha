@@ -8,6 +8,7 @@
 #  updated_at    :datetime
 #  code_activite :integer(4)
 #  encours       :boolean(1)
+#  description   :text
 #
 
 class Mission < ActiveRecord::Base
@@ -18,7 +19,7 @@ class Mission < ActiveRecord::Base
   has_many :users, :through => :rosters
 
   accepts_nested_attributes_for :convocationjours, :reject_if => lambda { |a| a.all? { |key, value| value.blank? } }, :allow_destroy => true
-  attr_accessible :name, :code_activite, :encours, :convocationjours_attributes, :convocationjours
+  attr_accessible :name, :code_activite, :encours, :convocationjours_attributes, :convocationjours, :description
 
 
   def debutannee

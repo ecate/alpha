@@ -18,8 +18,8 @@
 #  role                   :string(255)
 #  nom                    :string(255)
 #  prenom                 :string(255)
-#  grade                  :integer(4)
 #  actif                  :boolean(1)
+#  grade_id               :integer(4)
 #
 
 class User < ActiveRecord::Base
@@ -29,13 +29,20 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :actif, :email, :password, :password_confirmation, :remember_me, :role
+  attr_accessible :actif, :email, :password, :password_confirmation, :remember_me, :role, :grade_id, :nom, :prenom
 
   has_many :roster
+  has_one :grade
+  has_one :corp, :through => :grade
 
   ROLES = %w[compagnie section personnel]
 
   def roster_mission m
     Roster.find_by_user_id_and_mission_id(self.id, m)
   end
+
+  def mongrade
+    Grade.find_by_id(self.grade_id)
+  end
+
 end

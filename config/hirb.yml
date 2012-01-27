@@ -6,8 +6,19 @@
         - email
         - role
         - actif
-
-
+        - nom
+        - prenom
+        - grade_id
+  Corp:
+    :options:
+      :fields:
+        - id
+        - nom
+  Grade:
+    :options:
+      :fields:
+        - id
+        - nom
   Roster:
     :options:
       :fields:
@@ -34,6 +45,7 @@
           - id
           - name
           - encours
+          - description
 
   Convocationjour:
       :options:

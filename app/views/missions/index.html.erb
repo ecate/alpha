@@ -1,4 +1,4 @@
-<h1>Listing missions</h1>
+<h1>Liste des missions</h1>
 
 <table>
   <tr>
@@ -12,13 +12,13 @@
     <td> <%=mission.name%> </td>
     <td> <%=mission.code_activite %></td>
     <td> <%=mission.encours %></td>
-    <td><%= link_to 'Show', mission %></td>
-    <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
-    <td><%= link_to 'Destroy', mission, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Envoi SPA', mission %></td>
+    <td><%= link_to 'Modifier', edit_mission_path(mission) %></td>
+    <td><%= link_to 'Supprimer', mission, :confirm => 'Confirmez-vous la suppression?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Mission', new_mission_path %>
+<%= link_to 'Créer une nouvelle mission', new_mission_path %>

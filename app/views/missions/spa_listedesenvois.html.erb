@@ -1,0 +1,12 @@
+<h1>Demandes envoyées</h1>
+
+<h3 id="mission_description"> Mission : <%= @mission.name %></h3>
+<p> Liste des personnels conctactés :</p>
+<ul>
+<% User.where(:actif => true).each do |soldat| %>
+  <li><%= soldat.mongrade.nom %> <%= soldat.nom %> | <%= soldat.email %></li>
+  <% end %>
+</ul>
+
+<br/>
+<%= link_to 'Retour à la liste des missions', missions_path %>

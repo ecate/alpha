@@ -39,8 +39,9 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:users])
-    @user.actif = true
-
+    @user.actif= true
+    @user.role= params[:users]["role"]
+    stop_debug
 
     respond_to do |format|
       if @user.save
@@ -58,9 +59,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+
     respond_to do |format|
-      if @user.update_attributes(params[:users])
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to(@user, :notice => 'Fiche personnel mise à jour.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

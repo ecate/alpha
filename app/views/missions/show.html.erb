@@ -1,5 +1,33 @@
+<h1> Mission : <%= @mission.name%></h1>
+
 <p id="notice"><%= notice %></p>
 
+<%= button_to "Envoyer par mail les demandes de SPA",envoyerspa_mission_path(@mission),:confirm => 'Envoyer les mails à tous les personnels ?' %>
 
-<%= link_to 'Edit', edit_mission_path(@mission) %> |
-<%= link_to 'Back', missions_path %>
+
+<p>
+  <b>Libellé :</b>
+  <%=@mission.name%>
+</p>
+<p>
+  <b>Description :</b>
+  <%=@mission.description%>
+</p>
+<p>
+  <b>Code Activité :</b>
+  <%=@mission.code_activite %>
+</p>
+<p>
+  <b>Mission en cours :</b>
+  <%=@mission.encours %>
+</p>
+<h3> Jours de convocation :</h3>
+<ol>
+  <% @mission.convocationjours.each do |j|%>
+    <li> <%= I18n.l(j.jourconvoc) %> </li>
+<% end %>
+</ol>
+
+
+<%= link_to 'Modifier', edit_mission_path(@mission) %> |
+<%= link_to 'Retour à la liste', missions_path %>

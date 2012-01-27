@@ -1,0 +1,85 @@
+
+body {
+    font: 14px Georgia, "Times New Roman", Times, serif;
+    color: black;
+    display: block;
+    width : 500px;
+}
+
+
+#topbanner {
+    height:40px;
+    border-bottom:solid 1px #f2efe9;
+}
+
+#topbanner .container {
+    width:1000px;
+    margin:auto;
+}
+
+#mainnav {
+    float:left;
+    height:50px;
+    color: #f6dada;
+    min-width:600px;
+}
+table {
+    border-color: #000035;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 20px 0px 0px 13px;
+}
+
+td {
+    padding: 2px 3px 4px 13px;
+}
+
+
+#nodate{
+    color: #006699;
+    font-weight: bolder;
+}
+#mission_description{
+    color: gray;
+}
+
+
+#mainnav ul {list-style:none;}
+#mainnav li {
+    display:inline;
+    font: bold 13px "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#mainnav li a {
+    color:#827b6e;
+    text-decoration:none;
+    padding:12px 12px 0 12px;
+    height:25px;
+    display:block;
+    float:left;
+}
+#mainnav li a span {
+    display:block;
+    font: normal 14px Vollkorn, Georgia, "Times New Roman", Times, serif;
+    color:#6c675e;
+    text-transform: capitalize;
+}
+#mainnav li a:hover {color:#f3ebd9;}
+#mainnav li a:hover span {color:#827b6e!important}
+
+#mainnav li.active a {
+    color:#f3ebd9;
+    background:url('menuactive.gif') center bottom no-repeat;
+    text-shadow:#222 1px 1px 1px;
+}
+
+#connex {float: right;}
+#connex p {
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.clear {clear:both;}
+

@@ -10,25 +10,25 @@
    <!--fin mission en cours-->
 
 
- <% Mission.where(:encours => true).each do |m| %>
-    <h3> Mission : <%= m.name %></h3>
+ <% Mission.find_all_by_encours(true).each do |m| %>
+    <h3 id="mission_description"> Mission : <%= m.name %></h3>
     <% liste=Array.new %>
     <table id='rosters'>
       <tbody>
         <tr>
           <th> Personnel </th>
-          <% Convocationjour.where(:mission_id => m.id).each do |convoc| %>
+          <% m.convocationjours.each do |convoc| %>
             <th> <%= I18n.l(convoc.jourconvoc) %> </th>
           <% end %>
           <th>Total</th>
         </tr>
-          <% User.where(:actif => true).each do |soldat| %>
+          <% User.find_all_by_actif(true).each do |soldat| %>
             <%if !soldat.roster_mission(m.id).nil? %>
 
                 <% if soldat.roster_mission(m.id).jours.count != 0 %>
                 <tr>
-                    <td><%= link_to soldat.email, edit_roster_path(soldat.roster_mission(m.id))  %></td>
-                        <% Convocationjour.where(:mission_id => m.id).each do |convoc| %>
+                    <td><%= link_to (soldat.mongrade.nom + " " + soldat.nom), edit_roster_path(soldat.roster_mission(m.id))  %></td>
+                        <% m.convocationjours.each do |convoc| %>
                                    <td>
                                      <%if !Jour.where(:roster_id => soldat.roster_mission(m.id).id, :convocationjour_id => convoc.id).empty? %>
                                          X
@@ -49,7 +49,7 @@
     </table>
     <ul> Ne vient pas :
     <% liste.each do |soldat| %>
-        <li> <%= link_to soldat.email, edit_roster_path(soldat.roster_mission(m.id)) %> </li>
+        <li> <%= link_to (soldat.mongrade.nom + " " + soldat.nom), edit_roster_path(soldat.roster_mission(m.id)) %> </li>
     <%end%>
     </ul>
 

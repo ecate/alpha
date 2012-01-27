@@ -1,8 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Grade:</b>
+  <%= @user.mongrade.nom %>
+</p>
+<p>
+  <b>Prénom:</b>
+  <%= @user.prenom %>
+</p>
+<p>
+  <b>Nom:</b>
+  <%= @user.nom %>
+</p>
+
+<p>
   <b>Role:</b>
   <%= @user.role %>
+</p>
+<p>
+  <b>Actif:</b>
+  <%= @user.actif %>
 </p>
 <p>
   <b>Email:</b>
@@ -10,5 +27,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Modifier', edit_user_path(@user) %> |
+<%= link_to 'Retour à la liste', users_path %>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Demande de SPA pour <%= @roster.user.email %></h1>
+    <p>
+      Bonjour,<br/>
+      Merci de rendre compte de votre présence pour la mission <%= @roster.mission.name %> <br/>
+    </p>
+    <p>
+      Lien : <%= link_to 'Rendre compte', edit_roster_path(@roster) %>.
+    </p>
+  </body>
+</html>

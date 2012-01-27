@@ -64,7 +64,7 @@ class MissionsController < ApplicationController
 
     respond_to do |format|
       if @mission.update_attributes(params[:mission])
-        format.html { redirect_to @mission, :notice => 'Mission was successfully updated.' }
+        format.html { redirect_to @mission, :notice => 'Changements bien pris en compte' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -83,5 +83,22 @@ class MissionsController < ApplicationController
       format.html { redirect_to missions_url }
       format.json { head :ok }
     end
+  end
+
+  def demandespa
+    redirect_to 'spa_listedesenvois', :notice => 'Mail envoyé'
+  end
+
+  def envoyerspa
+    @mission = Mission.find(params[:id])
+
+    # créer les rosters pour les users actifs et envoyer un email
+    User.where(:actif => true).each do |soldat|
+      r= Roster.create!(:mission_id => @mission.id, :user_id => soldat.id)
+      unless r.nil?
+        DemandeSpaMailer.compterendu_spa(r).deliver
+      end
+    end
+      render 'spa_listedesenvois', :notice => 'Mail envoyé'
   end
 end

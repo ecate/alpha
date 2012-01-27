@@ -1,22 +1,26 @@
-<h1>Listing users</h1>
+<h1>Liste des personnels</h1>
 
 <table>
   <tr>
+    <th>Grade</th>
+    <th>Nom</th>
     <th>Role</th>
     <th>Email</th>
   </tr>
 
   <% @users.each do |user| %>
     <tr>
+      <td><%= user.mongrade.nom %></td>
+      <td><%= user.nom %></td>
       <td><%= user.role %></td>
       <td><%= user.email %></td>
-      <td><%= link_to 'Show', user %></td>
-      <td><%= link_to 'Edit', edit_user_path(user) %></td>
-      <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Détails', user %></td>
+      <td><%= link_to 'Modifier', edit_user_path(user) %></td>
+      <td><%= link_to 'Supprimer', user, :confirm => 'Confirmer la suppression?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New user', new_user_path %>
+<%= link_to 'Ajouter un personnel', new_user_path %>

@@ -1,10 +1,14 @@
-<h1> Présence prévisionnelle pour <%= User.find_by_id(@roster.user_id).email %> </h1>
+<% rmission = Mission.find_by_id(@roster.mission_id)  %>
+<h4> Présence prévisionnelle pour <%= @roster.user.mongrade.nom %>  <%= @roster.user.nom %></h4>
+<h4 id ="mission_description"> <%= rmission.name%> : <%= rmission.description %></h4>
 
-<% if Jour.find_by_roster_id(@roster.id).nil?%>
-    <h2>Aucune date sélectionnée pour la séance.</h2>
+
+
+<% if @roster.jours.count == 0 %>
+    <p id="nodate">Aucune date sélectionnée pour la séance.</p>
 <% end %>
   <legend>Votre SPA : </legend>
-  <%= button_to "Cliquez ici si vous ne venez pas",roster_nevientpas_path(@roster),:method=>:put %>
-
+  <%= button_to "Cliquez ici si vous ne venez pas",nevientpas_roster_path(@roster), :confirm => "Vous ne venez pas ?" %>
+  <br/>
   <%= render 'form' %>
 

@@ -175,9 +175,9 @@ fr:
     select:
       prompt: "Veuillez sélectionner"
     submit:
-      create: "Créer un(e) %{model}"
-      update: "Modifier ce(tte) %{model}"
-      submit: "Enregistrer ce(tte) %{model}"
+      create: "Créer"
+      update: "Enregistrer"
+      submit: "Enregistrer"
     label:
       roster:
         codeactivite: "Code Activité"
@@ -188,7 +188,10 @@ fr:
         harrivee: "Date et heure d'arrivée"
         hdepart: "Date et heure de départ"
         comment: "Commentaire"
-
+      mission:
+        name: "Libellé mission"
+        description: "Description"
+        code_activite: "Code activité"
 
 
 

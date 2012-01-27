@@ -1,23 +1,32 @@
 <%= csrf_meta_tag %>
 
-<!--header -->
-<div id="header-wrap"><div id="header">
-	<a name="top"></a>
-       <% if user_signed_in? %>
-            Connecte en tant que <%= link_to current_user.email, current_user %>. Ce n'est pas vous ? <%= link_to "Deconnexion", destroy_user_session_path, :method => :delete %>
-       <% else %>
+<div id="topbanner">
+  <div class="container">
+
+    <div id="connex">
+      <p>
+        <% if user_signed_in? %>
+            Connecte en tant que <%= link_to (current_user.mongrade.nom + " " +current_user.nom), current_user %>. Ce n'est pas vous ? <%= link_to "Deconnexion", destroy_user_session_path, :method => :delete %>
+        <% else %>
            <%= link_to "Connexion", new_user_session_path %>
         <% end %>
-	<div  id="nav">
+      </p>
+    </div>
+
+	<div id="mainnav">
 		<ul>
-			<li><a href="#"><%= link_to "Personnels", users_path %></a></li>
-			<li><a href="#"><%= link_to "SPA prévisionnels", rosters_path %></a></li>
-			<li><a href="#"><%= link_to "Missions", missions_path %></a></li>
+			<li><%= link_to "Personnels", users_path %></li>
+			<li><%= link_to "SPA prévisionnels", rosters_path %></li>
+			<li><%= link_to "Liste des missions", missions_path %></li>
 		</ul>
 	</div>
+    <div class="clear"></div>
+  </div>
+</div>
+<hr>
 
-<!--/header-->
-</div></div>
+
+
 
 
 
