@@ -1,5 +1,7 @@
-<h1>Nouvelle mission</h1>
+<% if can? :manage, @missions %>
+    <h1>Nouvelle mission</h1>
+    <%= render 'form_prealloc' %>
+    <br/>
+<% end %>
 
-<%= render 'form_prealloc' %>
- <br/>
 <%= link_to 'Retour à la liste des missions', missions_path %>

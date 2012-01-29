@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+ before_filter :authenticate_user!
   load_and_authorize_resource
 
   def index
     @users = User.all
+    #si non admin, on n'affiche pas les personnels non actifs
+    if !(can? :manage, @users)
+      @users = User.find_all_by_actif(true)
+    end
+
 
     respond_to do |format|
       format.html # index.html.erb

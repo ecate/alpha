@@ -44,10 +44,10 @@ class RostersController < ApplicationController
       @roster.mission_id= 2
       respond_to do |format|
         if @roster.save
-          format.html { redirect_to @roster, :notice => 'Roster was successfully created.' }
+          format.html { redirect_to @roster, :notice => 'SPA cree.' }
           format.json { render :json => @roster, :status => :created, :location => @roster }
         else
-          format.html { render :action => "new" }
+          format.html { render :action => "nouveau" }
           format.json { render :json => @roster.errors, :status => :unprocessable_entity }
         end
       end
@@ -83,7 +83,6 @@ class RostersController < ApplicationController
         end
       end
 
-
       #Etape 3 : on update le reste de l'objet Roster
       respond_to do |format|
         if @roster.update_attributes(params[:roster])
@@ -97,7 +96,7 @@ class RostersController < ApplicationController
   end
 
     def nevientpas
-      @roster = Roster.find(params[:roster_id])
+      @roster = Roster.find(params[:id])
       Jour.delete_all(:roster_id => @roster.id)
       redirect_to edit_roster_path(@roster), :notice => 'Vous ne serez pas present a la seance.'
     end

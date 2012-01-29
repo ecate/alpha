@@ -2,8 +2,10 @@
 
 <p id="notice"><%= notice %></p>
 
+<% can_manage_mission = can? :manage, @missions %>
+<% if can_manage_mission %>
 <%= button_to "Envoyer par mail les demandes de SPA",envoyerspa_mission_path(@mission),:confirm => 'Envoyer les mails à tous les personnels ?' %>
-
+<% end %>
 
 <p>
   <b>Libellé :</b>
@@ -13,14 +15,19 @@
   <b>Description :</b>
   <%=@mission.description%>
 </p>
+
+<% if can_manage_mission %>
 <p>
   <b>Code Activité :</b>
   <%=@mission.code_activite %>
 </p>
+
 <p>
   <b>Mission en cours :</b>
   <%=@mission.encours %>
 </p>
+<% end %>
+
 <h3> Jours de convocation :</h3>
 <ol>
   <% @mission.convocationjours.each do |j|%>
@@ -28,6 +35,7 @@
 <% end %>
 </ol>
 
-
-<%= link_to 'Modifier', edit_mission_path(@mission) %> |
+<% if can_manage_mission %>
+    <%= link_to 'Modifier', edit_mission_path(@mission) %> |
+<% end %>
 <%= link_to 'Retour à la liste', missions_path %>

@@ -1,68 +1,80 @@
-<%= form_for @roster do |f| %>
 
-  <% if @roster.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@roster.errors.count, "erreur") %> a empeche l'enregistrement :</h2>
+    <%= form_for @roster do |f| %>
 
-      <ul>
-      <% @roster.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <% if @roster.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@roster.errors.count, "erreur") %> a empeche l'enregistrement :</h2>
 
-
-   <% rmission = Mission.find_by_id(@roster.mission_id)  %>
+              <ul>
+                <% @roster.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
 
 
-  <h3>Dates de convocation </h3>
-  <div class="field">
-   <!--On affiche ici tous les jours de convocation de la mission-->
-   <!--Selon le jour, on vérifie si le personnel avait déjà dit ok pour ce jour, la checkbox sera alors cochée par défaut-->
-   <!--On ajoute dans paramas un tableau appelé "present" pour lister les jours cochés à traiter par l'action update du controller-->
-    <% Convocationjour.where(:mission_id => @roster.mission_id).order("jourconvoc ASC").each do |dconvoc|  %>
-        <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjour_id(@roster.id,dconvoc.id).nil?, :id => dconvoc.id) %>
-        <label for="<%= dconvoc.id %>"> <%= dconvoc.jourconvoc.to_formatted_s(:short) %> </label>
+        <% rmission = Mission.find_by_id(@roster.mission_id) %>
+
+
+        <h3>Dates de convocation </h3>
+        <div class="field">
+          <!--On affiche ici tous les jours de convocation de la mission-->
+          <!--Selon le jour, on vérifie si le personnel avait déjà dit ok pour ce jour, la checkbox sera alors cochée par défaut-->
+          <!--On ajoute dans paramas un tableau appelé "present" pour lister les jours cochés à traiter par l'action update du controller-->
+          <% Convocationjour.where(:mission_id => @roster.mission_id).order("jourconvoc ASC").each do |dconvoc| %>
+              <%= check_box_tag("roster[present][]", dconvoc.id, !Jour.find_by_roster_id_and_convocationjour_id(@roster.id, dconvoc.id).nil?, :id => dconvoc.id) %>
+              <label for="<%= dconvoc.id %>"> <%= dconvoc.jourconvoc.to_formatted_s(:short) %> </label>
+          <% end %>
+          <!--<%= hidden_field_tag "roster[present][]", "" %>-->
+        </div>
+        <div class="field">
+          <%= f.label :comment %>
+          <br/>
+          <%= f.text_area :comment, :rows => 2 %>
+        </div>
+        <h3> Administratif</h3>
+
+        <div class="field">
+          <%= check_box_tag "roster[convoc]" %>
+          <label for="convoc"> <%= f.label :convoc %> </label>
+        </div>
+
+        <div class="field">
+          <%= check_box_tag "roster[but]" %>
+          <label for="but"> <%= f.label :but %> </label>
+        </div>
+
+        <h3> Départ et Arrivée </h3>
+
+        <div class="field">
+          <%= f.label :butvilledepart %>
+          <br/>
+          <%= f.text_field :butvilledepart %>
+        </div>
+        <div class="field">
+          <%= f.label :harrivee %>
+          <br/>
+          <%= f.datetime_select :harrivee, :start_year => rmission.debutannee, :end_year => rmission.finannee, :default => {:month => rmission.debutmois}, :prompt => {:month => rmission.debutmois, :day => rmission.debutjour, :hour => '21', :minute => '08'} %>
+        </div>
+        <div class="field">
+          <%= f.label :hdepart %>
+          <br/>
+          <%= f.datetime_select :hdepart, :start_year => rmission.debutannee, :end_year => rmission.finannee, :default => {:month => rmission.finmois}, :prompt => {:month => rmission.finmois, :day => rmission.finjour, :hour => '17', :minute => '30'} %>
+        </div>
+
+
+
+
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+
+
+
     <% end %>
-    <!--<%= hidden_field_tag "roster[present][]", "" %>-->
-  </div>
-
-
-  <div class="field">
-    <%= check_box_tag "roster[convoc]" %>
-    <label for="convoc"> <%= f.label :convoc %> </label>
-  </div>
-
-  <div class="field">
-    <%= check_box_tag "roster[but]" %>
-    <label for="but"> <%= f.label :but %> </label>
-  </div>
-
-  <div class="field">
-    <%= f.label :butvilledepart %><br />
-    <%= f.text_field :butvilledepart %>
-  </div>
-  <div class="field">
-    <%= f.label :harrivee %><br />
-    <%= f.datetime_select :harrivee, :start_year => rmission.debutannee, :end_year => rmission.finannee, :default => { :month => rmission.debutmois }, :prompt => {:month => rmission.debutmois, :day => rmission.debutjour, :hour => '21', :minute => '08'} %>
-  </div>
-  <div class="field">
-    <%= f.label :hdepart %><br />
-    <%= f.datetime_select :hdepart, :start_year => rmission.debutannee, :end_year => rmission.finannee, :default => { :month => rmission.finmois}, :prompt => {:month => rmission.finmois, :day => rmission.finjour, :hour => '17', :minute => '30'} %>
-  </div>
-  <div class="field">
-     <%= f.label :comment %><br />
-     <%= f.text_field :comment, :column => 1, :row => 1 %>
-  </div>
 
 
 
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-
-
-<% end %>

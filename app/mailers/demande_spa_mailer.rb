@@ -9,4 +9,11 @@ class DemandeSpaMailer < ActionMailer::Base
            :subject => "SPA pour  #{@roster.mission.name}")
   end
 
+  def welcome_email(user)
+    @user = user
+    @url = "http://localhost:3000/rosters"
+    mail(:to => user.email, :subject => "SPA modifié")
+
+  end
+
 end

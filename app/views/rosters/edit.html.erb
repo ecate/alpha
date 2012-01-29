@@ -1,3 +1,4 @@
+<% if can? :manage, @roster %>
 <% rmission = Mission.find_by_id(@roster.mission_id)  %>
 <h4> Présence prévisionnelle pour <%= @roster.user.mongrade.nom %>  <%= @roster.user.nom %></h4>
 <h4 id ="mission_description"> <%= rmission.name%> : <%= rmission.description %></h4>
@@ -12,3 +13,4 @@
   <br/>
   <%= render 'form' %>
 
+<% end %>

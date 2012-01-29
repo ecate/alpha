@@ -1,26 +1,39 @@
 <h1>Liste des personnels</h1>
 
+<% can_read= can? :read, @users %>
+<% can_manage= can? :manage, @users %>
+
 <table>
   <tr>
     <th>Grade</th>
     <th>Nom</th>
-    <th>Role</th>
+    <% if can_manage %>
+        <th>Role</th>
+    <% end %>
     <th>Email</th>
   </tr>
 
   <% @users.each do |user| %>
-    <tr>
-      <td><%= user.mongrade.nom %></td>
-      <td><%= user.nom %></td>
-      <td><%= user.role %></td>
-      <td><%= user.email %></td>
-      <td><%= link_to 'Détails', user %></td>
-      <td><%= link_to 'Modifier', edit_user_path(user) %></td>
-      <td><%= link_to 'Supprimer', user, :confirm => 'Confirmer la suppression?', :method => :delete %></td>
-    </tr>
+      <tr>
+        <td><%= user.mongrade.nom %></td>
+        <td><%= user.nom %></td>
+        <% if can_manage %>
+            <td><%= user.role %></td>
+        <% end %>
+        <td><%= user.email %></td>
+
+        <% if can_manage %>
+
+        <td><%= link_to 'Supprimer', user, :confirm => 'Confirmer la suppression?', :method => :delete %></td>
+        <% end %>
+        <% if can? :read, user %>
+              <td><%= link_to 'Détails', user %></td>
+        <% end %>
+      </tr>
   <% end %>
 </table>
 
-<br />
-
+<br/>
+<% if can? :manage, @users %>
 <%= link_to 'Ajouter un personnel', new_user_path %>
+<% end %>

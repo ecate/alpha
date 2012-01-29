@@ -17,15 +17,19 @@
   <b>Role:</b>
   <%= @user.role %>
 </p>
-<p>
-  <b>Actif:</b>
-  <%= @user.actif %>
-</p>
+<% if can? :manage, @user %>
+    <p>
+      <b>Actif:</b>
+      <%= @user.actif %>
+    </p>
+<% end %>
+
 <p>
   <b>Email:</b>
   <%= @user.email %>
 </p>
 
-
+<% if can? :manage, @user %>
 <%= link_to 'Modifier', edit_user_path(@user) %> |
+<% end %>
 <%= link_to 'Retour à la liste', users_path %>

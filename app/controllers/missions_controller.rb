@@ -1,4 +1,6 @@
 class MissionsController < ApplicationController
+
+
   # GET /missions
   # GET /missions.json
   def index
@@ -92,9 +94,22 @@ class MissionsController < ApplicationController
   def envoyerspa
     @mission = Mission.find(params[:id])
 
+    #mission passée active pour affichage des SPA
+    if !@mission.encours
+        @mission.encours= true
+        @mission.save!
+    end
+
     # créer les rosters pour les users actifs et envoyer un email
-    User.where(:actif => true).each do |soldat|
-      r= Roster.create!(:mission_id => @mission.id, :user_id => soldat.id)
+    User.find_all_by_actif(true).each do |soldat|
+      rost= Roster.find_by_mission_id_and_user_id(@mission.id,soldat.id)
+
+      if rost.nil?
+        r= Roster.create!(:mission_id => @mission.id, :user_id => soldat.id)
+      else
+        r= rost
+      end
+
       unless r.nil?
         DemandeSpaMailer.compterendu_spa(r).deliver
       end

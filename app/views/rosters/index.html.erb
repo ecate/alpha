@@ -1,56 +1,68 @@
-<h1>Présence prévisionelle</h1>
+<h1>Présences prévisionelles</h1>
 
 <!--Pour toutes les missions en cours-->
- <!--créer une table-->
-     <!--entete : personnel / tous les jours de convocations de la mission / total-->
-     <!--Pour chaque user dont le roster n'est pas égal à 0   (sinon mettre dans une liste)-->
-         <!--user.name / Jour.find_by_roster_id_and_convocationjour_id(user.roster_mission(mission), convocation_id).nil? / user.roster_mission(mission).jours.count-->
- <!--fin table-->
- <!--Ne vient pas : afficher la liste dont le personnel est à zéro-->
-   <!--fin mission en cours-->
+<!--créer une table-->
+<!--entete : personnel / tous les jours de convocations de la mission / total-->
+<!--Pour chaque user dont le roster n'est pas égal à 0   (sinon mettre dans une liste)-->
+<!--user.name / Jour.find_by_roster_id_and_convocationjour_id(user.roster_mission(mission), convocation_id).nil? / user.roster_mission(mission).jours.count-->
+<!--fin table-->
+<!--Ne vient pas : afficher la liste dont le personnel est à zéro-->
+<!--fin mission en cours-->
 
 
- <% Mission.find_all_by_encours(true).each do |m| %>
-    <h3 id="mission_description"> Mission : <%= m.name %></h3>
+<% Mission.find_all_by_encours(true).each do |m| %>
+    <hr>
+    <h3 id="mission_description"> <%= link_to "Mission : "+ m.name , m %></h3>
+    <% if m.rosters.empty? %>
+        <p id="nospa"> -> SPA non demandée(s).
+          <% if @current_user.role == "compagnie" %>
+              <%= link_to "Envoyer demandes SPA", m %></p>
+          <% end %>
+    <% end %>
     <% liste=Array.new %>
     <table id='rosters'>
       <tbody>
-        <tr>
-          <th> Personnel </th>
-          <% m.convocationjours.each do |convoc| %>
+      <tr>
+        <th> Personnel</th>
+        <% m.convocationjours.each do |convoc| %>
             <th> <%= I18n.l(convoc.jourconvoc) %> </th>
-          <% end %>
-          <th>Total</th>
-        </tr>
-          <% User.find_all_by_actif(true).each do |soldat| %>
-            <%if !soldat.roster_mission(m.id).nil? %>
+        <% end %>
+        <th>Total</th>
+      </tr>
+      <% User.find_all_by_actif(true).each do |soldat| %>
+          <% if can? :read, soldat.roster_mission(m.id) %>
+              <% if !soldat.roster_mission(m.id).nil? %>
 
-                <% if soldat.roster_mission(m.id).jours.count != 0 %>
-                <tr>
-                    <td><%= link_to (soldat.mongrade.nom + " " + soldat.nom), edit_roster_path(soldat.roster_mission(m.id))  %></td>
+                  <% if soldat.roster_mission(m.id).jours.count != 0 %>
+
+                      <tr>
+                        <td><%= link_to (soldat.mongrade.nom + " " + soldat.nom), edit_roster_path(soldat.roster_mission(m.id)) %></td>
                         <% m.convocationjours.each do |convoc| %>
-                                   <td>
-                                     <%if !Jour.where(:roster_id => soldat.roster_mission(m.id).id, :convocationjour_id => convoc.id).empty? %>
-                                         X
-                                     <% end %>
-                                   </td>
+                            <td>
+                              <% if !Jour.where(:roster_id => soldat.roster_mission(m.id).id, :convocationjour_id => convoc.id).empty? %>
+                                  X
+                              <% end %>
+                            </td>
                         <% end %>
-                      <td> <%= soldat.roster_mission(m.id).jours.count %> </td>
+                        <td> <%= soldat.roster_mission(m.id).jours.count %> </td>
 
-                  </tr>
-                <%else%>
-                    <% liste << soldat %>
-                <% end %>
-            <%end %>
+                      </tr>
+
+                  <% else %>
+                      <% liste << soldat %>
+                  <% end %>
+              <% end %>
           <% end %>
+      <% end %>
 
 
       </tbody>
     </table>
-    <ul> Ne vient pas :
-    <% liste.each do |soldat| %>
-        <li> <%= link_to (soldat.mongrade.nom + " " + soldat.nom), edit_roster_path(soldat.roster_mission(m.id)) %> </li>
-    <%end%>
-    </ul>
-
- <% end %>
+    <% if !liste.empty? %>
+        <ul> Ne vient pas :
+          <% liste.each do |soldat| %>
+              <li> <%= link_to (soldat.mongrade.nom + " " + soldat.nom), edit_roster_path(soldat.roster_mission(m.id)) %> </li>
+          <% end %>
+        </ul>
+    <% end %>
+<% end %>

@@ -3,22 +3,25 @@
 <table>
   <tr>
     <th>Nom</th>
-    <th>Code activité</th>
     <th>En cours</th>
   </tr>
 
 <% @missions.each do |mission| %>
   <tr>
     <td> <%=mission.name%> </td>
-    <td> <%=mission.code_activite %></td>
     <td> <%=mission.encours %></td>
-    <td><%= link_to 'Envoi SPA', mission %></td>
-    <td><%= link_to 'Modifier', edit_mission_path(mission) %></td>
-    <td><%= link_to 'Supprimer', mission, :confirm => 'Confirmez-vous la suppression?', :method => :delete %></td>
+    <% if can? :manage, @missions %>
+      <td><%= link_to 'Envoi SPA', mission %></td>
+      <td><%= link_to 'Modifier', edit_mission_path(mission) %></td>
+      <td><%= link_to 'Supprimer', mission, :confirm => 'Confirmez-vous la suppression?', :method => :delete %></td>
+    <% else %>
+       <td><%= link_to 'Détails', mission %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+ <% if can? :manage, @missions %>
 <%= link_to 'Créer une nouvelle mission', new_mission_path %>
+<% end %>
