@@ -1,3 +1,4 @@
+# coding: utf-8
 class DemandeSpaMailer < ActionMailer::Base
   default :from => "marine.serre@gmail.com"
 
