@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails'
 gem 'rake' , '>= 0.9.2'
 
 
@@ -10,6 +10,7 @@ gem 'formtastic'
 gem 'execjs'
 gem 'jquery-rails'
 #gem 'pg'
+gem 'libv8', '~> 3.11.8'
 gem 'therubyracer'
 #gem "sqlite3", "~> 1.3.4"
 gem 'mysql2'
@@ -22,6 +23,7 @@ gem 'hirb'
 
 group :development do
     gem 'annotate', '2.4.1.beta1'
+    gem 'thin'
 end
 
 # Gems used only for assets and not required
